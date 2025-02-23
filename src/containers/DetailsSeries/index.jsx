@@ -2,18 +2,18 @@ import { useEffect, useState } from "react";
 import { Container, Background, Areatext, ContainerMovies } from "./styles";
 import { useParams } from "react-router-dom";
 import {
-  getVideo,
-  getDetails,
-  getCredits,
-  getSimilar,
+  getDetailsSeries,
+  getCreditsSeries,
+  getSeriesVideo,
+  getSimilarSeries
 } from "../../services/getData";
 import { getImages } from "../../utils/getimagens";
 import Spangenres from "../../components/Genres";
-import Credits from "../../components/Credits";
+import Credits from "../../components/CreditsSeries";
 import Slider from "../../components/Slider";
 
 function Details() {
-  const { id } = useParams();
+  const { idSeries } = useParams();
   const [video, setvideo] = useState([]);
   const [details, setDetails] = useState([]);
   const [credits, setCredits] = useState([]);
@@ -22,11 +22,11 @@ function Details() {
   useEffect(() => {
     async function getAlldata() {
       Promise.all([
-        getVideo(id),
-        getDetails(id),
-        getCredits(id),
-        getSimilar(id),
-      ]).then(([video, details, credits, similar]) => {
+        getDetailsSeries(idSeries),
+        getCreditsSeries(idSeries),
+        getSeriesVideo(idSeries),
+        getSimilarSeries(idSeries),
+      ]).then(([details, credits, video, similar]) => {
         setvideo(video);
         setDetails(details);
         setCredits(credits);

@@ -4,6 +4,7 @@ import Movies from "../containers/Movies";
 import Serie from "../containers/Series";
 import Layoutdefallt from "../layout/defaltLayout";
 import Details from "../containers/Details";
+import DetailsSeries from "../containers/DetailsSeries";
 
 function RoutesConfig() {
   return (
@@ -12,7 +13,8 @@ function RoutesConfig() {
         <Route path="/" element={<Home />} />
         <Route path="/movies" element={<Movies />} />
         <Route path="/series" element={<Serie />} />
-        <Route path="/details/:id" element={<Details />} />
+        <Route path="/details/Movies/:id" element={<Details />} />
+        <Route path="/details/Series/:idSeries" element={<DetailsSeries />} />
       </Route>
     </Routes>
   );

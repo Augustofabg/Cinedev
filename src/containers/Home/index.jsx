@@ -70,7 +70,7 @@ function Home() {
               <div>
                 <Button
                   red={true}
-                  onClick={() => navigate(`/details/${movie.id}`)}
+                  onClick={() => navigate(`/details/Movies/${movie.id}`)}
                 >
                   Assista Agora
                 </Button>
